@@ -28,8 +28,8 @@
 	integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ"
 	crossorigin="anonymous">
 
-<script src="Components/jquery-3.5.0.min.js"></script>
-<script src="Components/Funder.js"></script>
+<script src="Component/jquery-3.5.0.min.js"></script>
+<script src="Component/Funder.js"></script>
 
 <style type="text/css">
 html {
@@ -157,53 +157,53 @@ body {
 						<div class="form-outline mb-4">
 							<label class="form-label" for="form6Example3"
 								class="col-sm-2 col-form-label col-form-label-sm">Code:</label>
-							<input type="hidden" id="id" name="id"> <input
-								type="text" id="code" class="form-control" name="code">
+							<input type="hidden" id="funderID" name="funderID"> <input
+								type="text" id="funderCode" class="form-control" name="funderCode">
 						</div>
 
 						<div class="form-outline mb-4">
 							<label class="form-label" for="form6Example3"
 								class="col-sm-2 col-form-label col-form-label-sm">Name:</label>
-							<input type="text" id="name" class="form-control" name="name">
+							<input type="text" id="funderName" class="form-control" name="funderName">
 						</div>
 
 						<div class="form-outline mb-4">
 							<label class="form-label" for="form6Example3"
 								class="col-sm-2 col-form-label col-form-label-sm">Address:</label>
-							<input type="text" id="address" class="form-control" name="address">
+							<input type="text" id="funderAddress" class="form-control" name="funderAddress">
 						</div>
 
 						<div class="form-outline mb-4">
 							<label class="form-label" for="form6Example3"
 								class="col-sm-2 col-form-label col-form-label-sm">Telephone
-								:</label> <input type="text" id="tel" class="form-control" name="tel">
+								:</label> <input type="text" id="funderTel" class="form-control" name="funderTel">
 						</div>
 						<div class="form-outline mb-4">
 							<label class="form-label" for="form6Example3"
 								class="col-sm-2 col-form-label col-form-label-sm">Email
-								:</label> <input type="text" id="ptime" class="form-control" name="email">
+								:</label> <input type="text" id="funderEmail" class="form-control" name="funderEmail">
 						</div>
 						<div class="form-outline mb-4">
 							<label class="form-label" for="form6Example3"
 								class="col-sm-2 col-form-label col-form-label-sm">Gender:</label>
-								 <input type="text" id="gender" class="form-control"
-								name="gender">
+								 <input type="text" id="funderGender" class="form-control"
+								name="funderGender">
 						</div>
 						<div class="form-outline mb-4">
 							<label class="form-label" for="form6Example3"
 								class="col-sm-2 col-form-label col-form-label-sm">Fund
-								Amount :</label> <input type="text" id="fund" class="form-control"
-								name="fund">
+								Amount :</label> <input type="text" id="funderFund" class="form-control"
+								name="funderFund">
 						</div>
 						<div class="form-outline mb-4">
 							<label class="form-label" for="form6Example3"
 								class="col-sm-2 col-form-label col-form-label-sm">Duration
-								:</label> <input type="date" id="time" class="form-control" name="time">
+								:</label> <input type="date" id="funderTime" class="form-control" name="funderTime">
 						</div>
 						<div class="form-outline mb-4">
 							<label class="form-label" for="form6Example3"
 								class="col-sm-2 col-form-label col-form-label-sm">Description
-								:</label> <input type="text" id="desc" class="form-control" name="desc">
+								:</label> <input type="text" id="funderDes" class="form-control" name="funderDes">
 						</div>
 						<br>
 						<div id="alertSuccess" class="alert alert-success"></div>

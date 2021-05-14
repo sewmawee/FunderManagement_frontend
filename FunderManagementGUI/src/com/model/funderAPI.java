@@ -34,16 +34,18 @@ public class funderAPI extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		String outputString = funder_ob.insertFunders(
-				request.getParameter("code"), 
-				request.getParameter("name"),
-				request.getParameter("address"), 
-				request.getParameter("tel"),
-				request.getParameter("email"),
-				request.getParameter("gender"),
-				request.getParameter("fund"),
-				request.getParameter("time"),
-				request.getParameter("desc")
+				request.getParameter("funderCode"), 
+				request.getParameter("funderName"),
+				request.getParameter("funderAddress"), 
+				request.getParameter("funderTel"),
+				request.getParameter("funderEmail"),
+				request.getParameter("funderGender"),
+				request.getParameter("funderFund"),
+				request.getParameter("funderTime"),
+				request.getParameter("funderDes")
 				);
+		
+		//funderID,funderCode,funderName,funderAddress,funderTel,funderEmail,funderGender,funderFund,funderTime,funderDes
 		response.getWriter().write(outputString);
 	}
 
@@ -55,15 +57,15 @@ public class funderAPI extends HttpServlet {
 		
 		String output = funder_ob.updateFunders(
 			paras.get("funderID").toString(), 
-			paras.get("code").toString(), 
-			paras.get("name").toString(), 
-			paras.get("address").toString(), 
-			paras.get("tel").toString(),
-			paras.get("email").toString(),
-			paras.get("gender").toString(),
-			paras.get("fund").toString(),
-			paras.get("time").toString(),
-			paras.get("desc").toString()); 
+			paras.get("funderCode").toString(), 
+			paras.get("funderName").toString(), 
+			paras.get("funderAddress").toString(), 
+			paras.get("funderTel").toString(),
+			paras.get("funderEmail").toString(),
+			paras.get("funderGender").toString(),
+			paras.get("funderFund").toString(),
+			paras.get("funderTime").toString(),
+			paras.get("funderDes").toString()); 
 		
 			response.getWriter().write(output); 
 			

@@ -122,16 +122,17 @@ function onItemDeleteComplete(response, status) {
 $(document).on("click",".btnUpdate",function(event)
 		{
 		
+			
 			$("#funderID").val($(this).closest("tr").find('td:eq(0)').text());
-			$("#code").val($(this).closest("tr").find('td:eq(1)').text());
-			$("#name").val($(this).closest("tr").find('td:eq(2)').text());
-			$("#address").val($(this).closest("tr").find('td:eq(3)').text());
-			$("#tel").val($(this).closest("tr").find('td:eq(4)').text());
-			$("#email").val($(this).closest("tr").find('td:eq(5)').text());
-			$("#gender").val($(this).closest("tr").find('td:eq(6)').text());
-			$("#fund").val($(this).closest("tr").find('td:eq(7)').text());
-			$("#time").val($(this).closest("tr").find('td:eq(8)').text());
-			$("#desc").val($(this).closest("tr").find('td:eq(9)').text());		
+			$("#funderCode").val($(this).closest("tr").find('td:eq(1)').text());
+			$("#funderName").val($(this).closest("tr").find('td:eq(2)').text());
+			$("#funderAddress").val($(this).closest("tr").find('td:eq(3)').text());
+			$("#funderTel").val($(this).closest("tr").find('td:eq(4)').text());
+			$("#funderEmail").val($(this).closest("tr").find('td:eq(5)').text());
+			$("#funderGender").val($(this).closest("tr").find('td:eq(6)').text());
+			$("#funderFund").val($(this).closest("tr").find('td:eq(7)').text());
+			$("#funderTime").val($(this).closest("tr").find('td:eq(8)').text());
+			$("#funderDes").val($(this).closest("tr").find('td:eq(9)').text());		
 });
 
 
@@ -141,45 +142,45 @@ function validateItemForm() {
 	
 	
 	// code
-	if ($("#code").val().trim() == "") {
+	if ($("#funderCode").val().trim() == "") {
 		return "Please enter code.";
 	}
 	
 	// name
-	if ($("#name").val().trim() == "") {
+	if ($("#funderName").val().trim() == "") {
 		return "Please enter name.";
 	}
 
 	// address
-	if ($("#address").val().trim() == "") {
+	if ($("#funderAddress").val().trim() == "") {
 		return "Please enter address.";
 	}
 	
 	// tel
-	if ($("#tel").val().trim() == "") {
+	if ($("#funderTel").val().trim() == "") {
 		return "Please enter telephone number.";
 	}
 	
 	// email
-	if ($("#email").val().trim() == "") {
+	if ($("#funderEmail").val().trim() == "") {
 		return "Please enter email.";
 	}
 	
 	// gender
-	if ($("#gender").val().trim() == "") {
+	if ($("#funderGender").val().trim() == "") {
 		return "Please enter gender.";
 	}
 	
 	// fund
-	if ($("#fund").val().trim() == "") {
+	if ($("#funderFund").val().trim() == "") {
 		return "Please enter fund.";
 	}
 	// Time
-	if ($("#time").val().trim() == "") {
+	if ($("#funderTime").val().trim() == "") {
 		return "Please enter time.";
 	}
 	// Post Publish Time
-	if ($("#desc").val().trim() == "") {
+	if ($("#funderDes").val().trim() == "") {
 		return "Please enter description.";
 	}
 	

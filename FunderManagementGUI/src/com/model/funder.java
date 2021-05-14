@@ -52,6 +52,7 @@ public class funder {
 			//,funderName,funderAddress,funderTel,funderEmail,funderGender,funderFund,funderTime,funderDes
 			//prepare the HTML table to be displayed
 			output = "<table class='container-fluid ' border='1'><tr class='text-center'><th>Funder ID</th>"
+					+ "<th>Funder Code</th>"
 					+ "<th>Funder Name</th>"
 					+ "<th>Funder Address</th>"
 					+ "<th>Funder Tel</th>"
@@ -60,7 +61,7 @@ public class funder {
 					+ "<th>Funder Fund</th>"
 					+ "<th>Funder Time</th>"
 					+ "<th>Funder Description</th>"
-					+ "<th>Update</th><th>Delete</th></tr>";
+					+ "<th>Update</th><th>Remove<tr>";
 			
 			String query = "select * from funders";
 			Statement stmt = con.createStatement();
@@ -82,7 +83,8 @@ public class funder {
 				
 				
 				//Add a row into the HTML table
-				output += "<tr class='text-center'><td>" + funderCode + "</td>";
+				output += "<tr class='text-center'><td>" + funderID + "</td>";
+				output += "<td>" + funderCode + "</td>";
 				output += "<td>" + funderName + "</td>";
 				output += "<td>" + funderAddress + "</td>";
 				output += "<td>" + funderTel + "</td>";
@@ -118,7 +120,7 @@ public class funder {
 	
 	//inserting funder details
 	
-	public String insertFunders(String code , String name , String address , String tel , String email , String gender,String fund, String time, String desc) {
+	public String insertFunders(String funderCode , String funderName , String funderAddress , String funderTel , String funderEmail , String funderGender,String funderFund, String funderTime, String funderDes) {
 			
 			String output = "";
 			
@@ -131,22 +133,22 @@ public class funder {
 				}
 				
 				//create a prepared statement
-				String query = " insert into funders(funderID,funderCode,funderName,funderAddress,funderTel,funderEmail,funderGender,funderFund,funderTime,funderDes)" 
-				+ " values(?,?,?,?,?,?,?,?,?,?)";
+				String query = " insert into funders(funderCode,funderName,funderAddress,funderTel,funderEmail,funderGender,funderFund,funderTime,funderDes)" 
+				+ " values(?,?,?,?,?,?,?,?,?)";
 				
 				PreparedStatement preparedStmt = con.prepareStatement(query);
 				
 				//binding values
-				preparedStmt.setInt(1,0);
-				preparedStmt.setString(2,code);
-				preparedStmt.setString(3,name);
-				preparedStmt.setString(4,address);
-				preparedStmt.setString(5,tel);
-				preparedStmt.setString(6,email);
-				preparedStmt.setString(7,gender);
-				preparedStmt.setDouble(8,Double.parseDouble(fund));
-				preparedStmt.setString(9,time);
-				preparedStmt.setString(10,desc);
+				//preparedStmt.setInt(1,0);
+				preparedStmt.setString(1,funderCode);
+				preparedStmt.setString(2,funderName);
+				preparedStmt.setString(3,funderAddress);
+				preparedStmt.setString(4,funderTel);
+				preparedStmt.setString(5,funderEmail);
+				preparedStmt.setString(6,funderGender);
+				preparedStmt.setDouble(7,Double.parseDouble(funderFund));
+				preparedStmt.setString(8,funderTime);
+				preparedStmt.setString(9,funderDes);
 				
 				//execute the statement
 				preparedStmt.execute();
@@ -159,7 +161,7 @@ public class funder {
 			}
 			catch(Exception e) {
 				
-				output = "{\"status\":\"error\", \"data\": \"Error while inserting the post.\"}";
+				output = "{\"status\":\"error\", \"data\": \"Error while inserting the funder details.\"}";
 				//output = "Error while inserting";
 				//System.err.println(e.getMessage());
 				System.out.println(e.getMessage());
@@ -207,7 +209,7 @@ public class funder {
 			catch (Exception e) 
 			{ 
 				//output = "Error while deleting";
-				output = "{\"status\":\"error\", \"data\": \"Error while deleting the post.\"}"; 
+				output = "{\"status\":\"error\", \"data\": \"Error while deleting the funder details.\"}"; 
 
 				System.err.println(e.getMessage()); 
 			} 
@@ -219,7 +221,7 @@ public class funder {
 		//updating funder details
 		
 		
-		public String updateFunders(String funderID,String code , String name , String address , String tel , String email , String gender,String fund, String time, String desc)
+		public String updateFunders(String funderID,String funderCode , String funderName , String funderAddress , String funderTel , String funderEmail , String funderGender,String funderFund, String funderTime, String funderDes)
 		{ 
 			String output = ""; 
 			try
@@ -235,15 +237,15 @@ public class funder {
 		
 				// binding values
 				
-				preparedStmt.setString(1,code);
-				preparedStmt.setString(2,name);
-				preparedStmt.setString(3,address);
-				preparedStmt.setString(4,tel);
-				preparedStmt.setString(5,email);
-				preparedStmt.setString(6,gender);
-				preparedStmt.setDouble(7,Double.parseDouble(fund));
-				preparedStmt.setString(8,time);
-				preparedStmt.setString(9,desc); 
+				preparedStmt.setString(1,funderCode);
+				preparedStmt.setString(2,funderName);
+				preparedStmt.setString(3,funderAddress);
+				preparedStmt.setString(4,funderTel);
+				preparedStmt.setString(5,funderEmail);
+				preparedStmt.setString(6,funderGender);
+				preparedStmt.setDouble(7,Double.parseDouble(funderFund));
+				preparedStmt.setString(8,funderTime);
+				preparedStmt.setString(9,funderDes); 
 				preparedStmt.setInt(10, Integer.parseInt(funderID)); 
 		 
 				// execute the statement
@@ -257,7 +259,7 @@ public class funder {
 			catch (Exception e) 
 			{ 
 				//output = "Error while updating";
-				output = "{\"status\":\"error\", \"data\": \"Error while updating the post.\"}"; 
+				output = "{\"status\":\"error\", \"data\": \"Error while updating the funder details.\"}"; 
 				System.err.println(e.getMessage()); 
 			} 
 			

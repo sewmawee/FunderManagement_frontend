@@ -20,13 +20,13 @@ import com.model.funder;
 
 
 
-@Path("/Funder")
+@Path("/Funders")
 
 public class funderService {
 	
 	
 	
-	funder funderObj = new funder(); 
+	funder funder_ob = new funder(); 
 	
 	
 	//Reading the funder details
@@ -36,7 +36,7 @@ public class funderService {
 	@Path("/") 
 	@Produces(MediaType.TEXT_HTML) 
 	public String viewFunders() {
-	 return funderObj.viewFunders();
+	 return funder_ob.viewFunders();
 	 } 
 	
 	
@@ -60,7 +60,7 @@ public class funderService {
 			
 			  
 	{ 
-		String output = funderObj.insertFunders(funderCode,funderName,funderAddress,funderTel,funderEmail,funderGender,funderFund,funderTime,funderDes); 
+		String output = funder_ob.insertFunders(funderCode,funderName,funderAddress,funderTel,funderEmail,funderGender,funderFund,funderTime,funderDes); 
 		return output; 
 	}
 	
@@ -81,7 +81,7 @@ public class funderService {
 		 
 			//Read the value from the element <productID>
 			String funderID = doc.select("funderID").text(); 
-			String output = funderObj.deleteFunders(funderID); 
+			String output = funder_ob.deleteFunders(funderID); 
 			return output; 
 		}
 	
@@ -112,7 +112,7 @@ public class funderService {
 			String funderDes = funderObject.get("funderDes").getAsString();
 			
 			
-			String output = funderObj.updateFunders(funderID,funderCode,funderName,funderAddress,funderTel,funderEmail,funderGender,funderFund,funderTime,funderDes); 
+			String output = funder_ob.updateFunders(funderID,funderCode,funderName,funderAddress,funderTel,funderEmail,funderGender,funderFund,funderTime,funderDes); 
 		
 			return output; 
 		}
